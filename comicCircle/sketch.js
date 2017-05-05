@@ -9,6 +9,7 @@ function setup() {
   var y = (windowHeight - margin) / 2;
   cnv.position(x, y);
   frameRate(30);
+  background(255);
   //noFill();
   //noStroke();
 }
