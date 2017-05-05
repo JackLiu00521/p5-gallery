@@ -27,3 +27,9 @@ function randomPt(){
   var ptY = random(-10000, 10000);
   return new p5.Vector(ptX,ptY);
 }
+
+function keyTyped() {
+  if(key === 's') {
+     saveCanvas('comicLine-' +  month() + day() + hour() + minute(), 'jpg');
+  }
+}

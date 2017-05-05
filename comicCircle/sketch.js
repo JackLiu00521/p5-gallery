@@ -13,16 +13,22 @@ function setup() {
   //noStroke();
 }
 function draw() {
-  
+
   var mouse = new p5.Vector(mouseX, mouseY);
   var radius = map(sin(frameCount*0.1), -1, 1, rMin, rMax);
-  
+
   //var rotateAngle = map(sin(frameCount*0.11), -1, 1, -PI, PI);
   //console.log(rotateAngle);
   var move = new p5.Vector(cos(frameCount*0.11)*radius, sin(frameCount*0.11)*radius);
-  
+
   var centerPt = p5.Vector.add(mouse, move);
   ellipse(centerPt.x, centerPt.y, radius*2);
   //ellipse(mouseX,mouseY,50);
-  
+
+}
+
+function keyTyped() {
+  if(key === 's') {
+     saveCanvas('comicCirle-' +  month() + day() + hour() + minute(), 'jpg');
+  }
 }
