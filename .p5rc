@@ -1,0 +1,20 @@
+{
+  "name": "p5-gallery",
+  "projects": [
+    "ripple",
+    "ComicCircle",
+    "ComicLine",
+    "vine",
+    "Fish-having-fun",
+    "triangle-scenery",
+    "triangle-scenery-2",
+    "VoiceTest",
+    "mechanism-draw",
+    "The-Matrix",
+    "catWei",
+    "phonograph",
+    "LongMenVoting",
+    "3d-flowField",
+    "colorGrid"
+  ]
+}
