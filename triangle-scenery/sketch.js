@@ -1,8 +1,8 @@
 var num = 400;
 var v = [];
 var tri;
-var w = 600;
-var h = 400;
+var w = 800;
+var h = 600;
 var c;
 var img;
 var fileCount = 0;
@@ -10,7 +10,8 @@ var fileCount = 0;
 // var picY;
 
 function preload() {
-  img = loadImage("DSC_4258.JPG");
+  // img = loadImage("DSC_4258.JPG");
+  img = loadImage("DSC_0530.jpg");
 }
 
 
@@ -31,7 +32,7 @@ function setup() {
 
 
 function draw() {
-  frameRate(1);
+  frameRate(2);
   // num = floor(map(sin(frameCount * 0.6), -1, 1, 100, 700));
   // console.log(num);
 
@@ -52,7 +53,12 @@ function draw() {
     j--;var pt3 = new p5.Vector(v[tri[j]][0], v[tri[j]][1]);
     var mid = new p5.Vector(Math.floor((pt1.x + pt2.x + pt3.x) / 3), Math.floor((pt1.y + pt2.y + pt3.y) / 3));
 
-    // if (mid.x < 0 || mid.y < 0) {
+    if(mid.x < 0) {mid.x = 5};
+    if(mid.x > img.width) {mid.x = img.width-5};
+    if(mid.y < 0) {mid.y = 5};
+    if(mid.y > img.height) {mid.x = img.height-5};
+
+    // if (mid.x < 0 || mid.y < 0) {s
     //   if(pt1.x > 0 && pt1.y > 0) {
     //     var index = (pt1.x + pt1.y * img.width) * 4;
     //   }
@@ -102,8 +108,7 @@ function keyTyped() {
 function gotFile(file) {
   if (file.type === 'image') {
     img = loadImage(file.data, function(img) {
-       img.resize(w+50, 0);
-       img.position(-25,-10);
+       img.resize(w, 0);
     });
   }
 }
